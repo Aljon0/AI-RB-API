@@ -3,7 +3,8 @@
     "@mistralai/mistralai": "^1.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "puppeteer": "^24.7.2"
   },
   "name": "ai-rb-api",
   "version": "1.0.0",

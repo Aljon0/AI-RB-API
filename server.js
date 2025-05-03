@@ -1,16 +1,25 @@
 // server.js
-import express from 'express';
-import dotenv from "dotenv";
-import cors from "cors";
 import { Mistral } from '@mistralai/mistralai';
+import cors from "cors";
+import dotenv from "dotenv";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 dotenv.config();
 
+// Initialize Express application
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Set up directory for file storage
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 // Middleware
-app.use(cors({ origin: 'http://localhost:5173' })); // Allow your Vite dev server
-app.use(express.json());
+app.use(cors({ 
+  origin: ['http://localhost:5173', 'http://localhost:3000'] // Allow both Vite dev server and potential React dev server
+}));
+app.use(express.json({ limit: '50mb' }));
 
 // Rate limiting variables
 const requestQueue = [];
