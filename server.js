@@ -17,7 +17,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Middleware
 app.use(cors({ 
-  origin: ['http://localhost:5173', 'http://localhost:3000','https://ai-rb-haee.onrender.com/'] // Allow both Vite dev server and potential React dev server
+  origin: ['http://localhost:5173', 'http://localhost:3000','https://ai-rb-haee.onrender.com'] // Allow both Vite dev server and potential React dev server
 }));
 app.use(express.json({ limit: '50mb' }));
 
